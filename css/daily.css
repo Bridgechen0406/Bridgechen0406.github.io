@@ -1,0 +1,319 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+   font-family: 'Roboto Mono', monospace;;
+    padding:0;
+    margin:0;
+}/*全區置中*/
+
+body{
+    background:rgb(0, 0, 0);
+    /*background-size:cover;/*滿版*/
+    background-position:bottom;/*底部往上長*/
+}
+/*偽元素*/
+::-moz-selection{/*firefox*/
+    color:#000000;
+    background:#9CC4BC;
+}
+::selection{
+    color:#000000;
+    background:#9CCABC;
+}
+
+/* nav bar */
+nav{
+    position:relative;/*置頂在固定位置，後續再用top bottom right left制定，不隨著滾輪滑動*/
+    width:100%;/*全區寬*/
+    box-sizing:border-box;
+    padding:20%;
+    text-align: center;
+    background:url(../images/daily_peek.png) bottom no-repeat;/*在容器裡放圖片*/
+	background-size:cover;/*剛好擺滿照片*/
+}
+
+#typing-text {
+    color:rgb(237, 233, 228);
+    width:50%;
+    overflow: hidden; /* 隱藏超出範圍的文字 */
+    border-right: .15em solid rgb(250, 248, 245); /* 模擬游標的動畫效果 */
+    white-space: wrap; /* 文字換行 */
+    margin: 0 auto; /* 文字置中 */
+    letter-spacing: .15em;
+    text-align: left;
+    animation:
+        typing 5s steps(40, end)forwards,
+        blink-caret .75s step-end infinite;
+}
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100%
+    {
+        width:50%
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: rgb(237, 233, 228);
+    }
+}
+
+
+/*section*/
+section{
+    position:relative;
+    margin:10px auto;
+}
+section h3{
+    color:rgb(237, 233, 228);
+    font-weight:400;
+    font-size:10pt;
+    letter-spacing: 5px;
+    text-align: center;
+    animation: blink 2s infinite;
+  }
+  @keyframes blink {
+    0%, 49%, 100% {
+      opacity: 0;
+    }
+    50%, 99% {
+      opacity: 1;
+    }
+  }
+
+
+#sketch1-container {
+    height: 55vh;
+    width: 80%;
+    margin: 10px auto;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+    background:url(../game/game_cf.png) center no-repeat;/*在容器裡放圖片*/
+	background-size:cover;/*剛好擺滿照片*/
+    display: block;
+  }
+  #gameOverImage {
+    object-fit: cover;
+  }
+
+  section h4{
+    color:rgb(237, 233, 228);
+    font-weight:200;
+    font-size:8pt;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+ 
+/*article*/
+article{
+    position:relative;/*置頂在固定位置，後續再用top bottom right left制定，不隨著滾輪滑動*/
+    width:90%;/*全區寬*/
+    margin: 10px auto; 
+    box-sizing:border-box;
+    border-top:solid 1px rgb(237, 233, 228);
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+/* 標籤a是inline屬性 沒辦法設定寬高 只能另外設定,argin padding */
+.pre{
+    margin:10px auto; 
+}
+.pre h3{
+   color:rgb(237, 233, 228);
+   font-weight:400;
+   font-size:10pt;
+   letter-spacing: 5px;
+   text-align: center;
+}
+.previous{
+    display:flex;
+    flex-wrap: wrap;
+    width:90%;
+    justify-content: space-around;
+
+}
+.card {  
+    position: relative;
+    box-sizing:border-box;
+    width:45%;
+    text-align:center;
+    padding:0px;
+    margin:5px;
+    /*background:#F36F38;*/
+    color:rgb(237, 233, 228);
+    z-index:30;
+}
+.card h4{
+    font-weight: 200;
+    font-size:8pt;
+    text-align: center;
+}
+article .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* 隱藏 */
+    transition: opacity 0.3s ease; /* 給予漸變效果 */
+    z-index:2;
+    box-shadow: 0 0 20px rgba(255, 252, 245, 0.8);
+    background: rgba(0, 0, 0, 0.9); /* 設置不透明的背景色 */
+}
+.card:hover .overlay {
+    opacity: 1; 
+}
+article .overlay h4 {
+    font-size: 10px;
+    text-decoration: none;
+    letter-spacing: 3px;
+    color:rgb(255, 255, 255);
+    margin:5px;
+}
+aside{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.sign {
+    background-color: rgb(0, 0, 0);
+    width:60%;
+    height:10%;
+    position: relative;
+    z-index:1;
+}
+aside .overlay {
+    position: absolute;
+    width: 60%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.8); /* 半透明白色背景 */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* 隱藏 */
+    transition: opacity 0.3s ease; /* 給予漸變效果 */
+    cursor: pointer;
+    z-index:2;
+    box-shadow: 0 0 120px rgba(255, 252, 245, 0.8);
+}
+aside:hover .overlay {
+    opacity: 1; 
+}
+.overlay a {
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    color:rgb(255, 255, 255);
+}
+
+/* 共用的 keyframes 定義 */
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+#p1, #p2, #p3, #p4, #p5, #p6, #p7, #p8 {
+	stroke-linecap: round;
+	stroke:rgb(237, 233, 228);
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 2000; /* 或者您認為足夠覆蓋整個圖形的值 */
+    animation: dash 10s linear infinite;/*ease可以先快後慢*/
+}
+
+/*aside*/
+
+
+footer{
+    position:relative;/*置頂在固定位置，後續再用top bottom right left制定，不隨著滾輪滑動*/
+    width:100%;/*全區寬*/
+    height:5%;
+    box-sizing:border-box;
+    /*border-top:solid 1px rgb(232, 232, 232);*/
+    padding:25px;
+    text-align: center;
+}
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../images/daily_peek.png) bottom no-repeat;
+    background-size: cover;
+    transform: scaleY(-1); /* 在垂直方向上翻转 */
+}
+
+footer a {
+    color: rgb(237, 233, 228);
+    font-size: medium;
+    font-weight: 500;
+    padding: 20px 10px;
+    text-decoration: none;
+    letter-spacing: 5px;
+    cursor: pointer;
+    position: relative; /* 添加这行 */
+    z-index: 1; /* 添加这行 */
+}
+
+
+
+
+/*for desktops*/
+@media only screen and (min-width: 768px) {
+
+nav{
+    padding:10%;
+}
+
+article{
+    width:90%;/*全區寬*/
+    margin: 10px auto; 
+}
+/* 標籤a是inline屬性 沒辦法設定寬高 只能另外設定,argin padding */
+.pre{
+    width:60%;
+}
+.pre h3{
+    font-size: 12pt;
+}
+.previous{
+    display:flex;
+    flex-wrap: wrap;
+    width:90%;
+    justify-content: space-around;
+
+}
+.previous .card {  
+    box-sizing:border-box;
+    width:30%;
+    text-align:center;
+    padding:0px;
+    margin:5px;
+}
+.previous .card h4{
+    font-weight: 200;
+    font-size:10pt;
+    text-align: center;
+}
+aside .overlay a {
+    font-size: 18px;
+}
+}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content=" width=device-width" initial-scale=1.0> <!--RWD一定要加進去！-->
+<link href="css/mer.css" rel="stylesheet" type="text/css">
+
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+</style>
+
+
+
+<title>css_grid</title>
+
+</head>
+
+<body>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="js/mer.js"></script>
+
+   <div id=bg1 class="background-container"></div>
+
+<nav>
+   <a href="index.html" style="text-decoration: none;" target="_self">
+   <div class="logo">
+      <p>B R I D G E   x   M O R I</p>
+  </div>
+</a>  
+</nav>
+
+<section>
+   <div id=banp class="ban">
+      <img src="images/mer_ban.png" style="display:block; margin:auto;" />
+      <img id="popupImage" class="popup-img" src="images/mer_click-07.png" alt="sparkling">
+   </div>
+</section>
+
+
+<main>
+<!--cam.mer-->
+   <div id="cam" class="mer">
+      <div class="pic">
+         <img src="images/mer-02.png">
+      </div>
+   <p style="vertical-align:bottom;">A YADAYADA2.0 camera which is suitable for everyone, easy to use and light. ISO 400, 27PCS with flashlight.Please open the flashlight when you are photographing indoor, at night, on cloudy day, or in the shadow.</p>
+   </div>
+
+   <div id ="cam_content" style="display: none">
+      <h3>YADA YADA 2.0 CAMERA</h3>
+
+      <div class="otherpic">
+         <ul class="img_ul">
+            <img src="images/mer_camp3.jpg">
+            <img src="images/mer_camp1.jpg">
+            <img src="images/mer_camp2.jpg">
+            <img src="images/mer_camp4.jpg">
+         </ul>
+         <!--原點位置-->
+         <ul class="litCir_ul"></ul>
+         <!--左右切換按鈕-->
+         <div class="buttons">
+            <span class="left"><</span>
+            <span class="right">></span>
+         </div>
+      </div>
+
+      <h5>These are the photos taken by this camera.</h5>
+      <a href="https://www.littleforest166.com/collections/%E6%A3%AE%E6%A3%AE%E5%B0%8F%E7%89%A9/products/yama-x-bridge-%E8%81%AF%E5%90%8D%E6%AC%BE%E9%99%90%E9%87%8F%E5%8D%B3%E5%8F%AF%E6%8B%8D">BUY ONE CAMERA</a>
+   </div>
+
+<!--bag.mer-->
+   
+   <div id="bag" class="mer">
+      <div class="pic">
+         <img src="images/mer-04.png">
+      </div>
+
+      <p style="vertical-align:bottom;">A small bag fit in a camera, a purse, a smartphone and a lipstick. A convenient size for you to go for a walk.  </p>
+   </div>
+
+   <div id ="bag_content" style="display: none">
+         
+      <h3>A NO POSION BAG</h3>
+
+      <div class="otherpic"></div>
+      <h5>You can put these in your bag.</h5>
+      <a href="https://www.littleforest166.com/collections/%E6%A3%AE%E6%A3%AE%E5%B0%8F%E7%89%A9/products/%E6%A3%AE%E5%AF%AB%E7%9C%9F%E5%B8%86%E5%B8%83%E8%A2%8B">BUY ONE BAG</a>
+   
+   </div>
+
+   
+
+<!--toy.mer-->
+   <div id="toy" class="mer">
+      <div class="pic">
+         <img src="images/mer-05.png">
+      </div>
+      <p style="vertical-align:bottom;">A weird toy for you, please shake it.  </p>
+   </div>
+
+   <div id ="toy_content" style="display: none">
+      <h3>A FAKE SNACK</h3>
+
+      <div class="otherpic"></div>
+      <h5>Please shake it.<br>Do not eat it.</h5>
+      <a>SOLD OUT</a>
+   </div>
+
+<!--sticker.mer-->
+   <div id="sticker" class="mer">
+      <div class="pic">
+         <img src="images/mer_08-08.png">
+      </div>
+      <p style="vertical-align:bottom;">Some stickers for your camera or your laptop, they are all waterproof and kawaii.  </p>
+   </div>
+
+   <div id ="sticker_content" style="display: none">
+      <h3>SOME STICKERS</h3>
+
+      <div class="otherpic">
+         <img src="images/mer_st_-11.png">
+         <img src="images/mer_st_-12.png">
+         <img src="images/mer_st_-13.png">
+      </div>
+      <h5>Please stick on your camera or your laptop, or anywhere.</h5>
+      <a href="https://www.littleforest166.com/collections/%E6%A3%AE%E6%A3%AE%E5%B0%8F%E7%89%A9/products/%E6%A3%AE%E5%AF%AB%E7%9C%9F-x-bridge-%E8%81%AF%E5%90%8D%E8%B2%BC%E7%B4%99-%E1%90%9F-%E1%90%9F">BUY SOME STICKERS</a>
+   </div>
+
+</main>
+
+<aside>
+   <h4>WE ALSO HAVE SET</h4>
+      <div class="mori">
+         
+         <div class="overlay">
+            <a href="https://www.littleforest166.com/collections/%E6%A3%AE%E6%A3%AE%E5%B0%8F%E7%89%A9/products/%E6%A3%AE%E5%AF%AB%E7%9C%9F%E6%A9%9F%E5%BA%97-x-yama-cactus-yadayada-cactus-%E9%99%90%E9%87%8F%E7%89%88%E4%B8%80%E6%AC%A1%E6%80%A7%E5%8D%B3%E5%8F%AF%E6%8B%8D-1" target="_blank">A good gift set<br>- click me -</a>
+         </div>
+         <div class="img">
+            <img src="images/mer_camset.jpg">
+         </div>
+      </div>
+
+      <p> A Bag and A Camera, a good gift choice.A Bag and A Camera, a good gift choice.A Bag and A Camera, a good gift choice.
+      </p>
+
+   <h4>ABOUT THIS BRAND</h4>
+      <div class="mori">
+         <div class="overlay">
+            <a href="https://www.instagram.com/bridge_chiao/" target="_blank">ABOUT BRIDGE<br>- click me -</a>
+         </div>
+         <div class="img">
+            <img src="images/mer_bridge-09.png">
+         </div>
+      </div>
+
+      <p>  BRIDGE is the collaborate illustrator with MORI, they design merchandises together for every month, these stuff will be sell at MORI store. 
+      </p>
+
+      <div class="mori">
+         <div class="overlay">
+            <a href="https://www.instagram.com/little_forest166/" target="_blank">ABOUT MORI<br>- click me -</a>
+         </div>
+
+         <div class="img">
+            <img src="images/mer_mori.jpg">
+         </div>
+      </div>
+
+      <p>MORI is a film camera shop located in Hsinchu for years, they offer professional knowledge about films and film cameras. It is a decent choice to buy your ideal film camera here.
+      </p>
+
+</aside>
+
+<footer>
+   <div class="buy">
+      <a href="index.html" style="text-decoration: none;"target="_self">
+         <p>戻る<br>！BACK TO HOME！</p>
+      </a>
+   </div>
+</footer>
+
+
+</body>
+</html>

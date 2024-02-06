@@ -1,0 +1,783 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+*{	
+	margin: 0; /* 置中 */
+  	padding: 0; /* 置中 */
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+body{
+	margin: 0; /* 置中 */
+  	padding: 0; /* 置中 */
+  	background-size:100% auto; /* 寬度撐滿網頁 */
+	background-color: #f3f1eb;
+}
+
+.background-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    animation: scrollBackground 13s linear infinite;
+    background: url(../images/mer_bg-06.png) repeat-y;
+	background-size:100% auto; 
+}
+
+@keyframes scrollBackground {
+    0% {
+        transform: translateY(-100%);
+    }
+	50% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+
+/*nav*/
+nav{
+	position:fixed;/*置頂在固定位置，後續再用top bottom right left制定，不隨著滾輪滑動*/
+    width:100%;/*全區寬*/
+    top:0px;
+	margin:0 auto;
+    z-index:100000;  /* 疊層的順序（圖層的感覺）數字越大越上層 */
+    padding:18px 0px 18px 0px; /* 上右下左的padding space */
+	background:url(../images/mer-03.png) bottom no-repeat;/*在容器裡放圖片*/
+	background-size:cover;/*剛好擺滿照片*/
+	animation: fadeInFromTop 1s ease 0s 1;
+}
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 達到頂部，元素停止移動 */
+    }
+}
+.a{
+	text-decoration: none;
+}
+.logo p{
+	text-align: center;
+	font-weight:700;
+	color:#efe1c1;
+	letter-spacing: 5px;
+}
+/*section*/
+section{
+	display:flex;
+	position:relative;
+	width:100%;
+	height:40%;
+	top:60px;
+	margin:20px auto 0px;/*100px是往下移*/
+	justify-content: center;/*讓圖片置中*/
+    align-items:center;/*讓圖片置中*/
+	animation: fadeInFromTop 1s ease 0s 1;
+}
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 達到頂部，元素停止移動 */
+    }
+}
+
+
+
+.ban{
+	width:70%;
+	position:relative;
+}
+.ban img{
+	width: 100%;   
+    height: 100%; 
+	z-index:1;
+	cursor: pointer;  
+    
+}
+.ban img.shake {
+    animation: shake 0.2s ease;
+}
+#popupImage {
+	position:absolute;
+	top:10%;
+	right:5%;
+    width: 25%; /* 调整小图片的宽度 */
+	height:max-content;
+	z-index:2;
+    display: none;
+	cursor:pointer;
+}
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+		transform: translateY(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+	75%{
+		transform: translateX(-10px);
+	}
+}
+
+/*main*/
+main{
+	display:flex;
+	position:relative;
+	width:100%;
+	margin:70px auto 0px;
+	flex-direction: column;
+	justify-content:center;
+	align-items:center;
+	letter-spacing: 1px;
+	animation: fadeInFromBottom 1s ease 0s 1;
+}
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 達到頂部，元素停止移動 */
+    }
+}
+
+.mer{
+	display:flex;
+	width:70%;
+	height:300px;
+	justify-content: center;
+	/*border-bottom:3px dotted #ed431b;*/
+	margin:0px 0px 10px 0px;
+	text-align: center;
+	overflow:hidden;
+	cursor:pointer;
+}
+.pic {
+	width:50%;
+	height:auto;
+	/*float:left;*/
+  }
+.pic img {
+	max-width: 100%;
+	max-height: 100%;
+  }
+.mer p{
+	display: flex;
+	flex-direction: column;	
+	justify-content:flex-end;
+	width:45%;
+	float:left;
+	text-align:left;
+	font-size:8pt;
+	color:#ed431b;
+	margin:0px 0px 15px 10px;
+}
+
+#cam_content{
+	position:absolute;
+	top:20%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	height:40%;
+	width:70%;
+	background-color: #f3f1ebd1;
+	z-index:50;
+	display:none;
+	display:flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	box-shadow:0px 0px 20px rgba(0, 0, 0, 0.5);
+	transition: height 0.3s ease;
+}
+#cam_content h3{
+	text-align: center;
+	color:#ed431b;
+	font-weight:700;
+	letter-spacing: 10px;
+	margin:5px;
+}
+#cam_content .otherpic{
+	position:relative;
+	width:80%;
+	height:70%;
+	/*background:url(../images/mer-03.png) bottom no-repeat;/*在容器裡放圖片*/
+	/*background-size:cover;/*剛好擺滿照片*/
+	margin:12px auto;
+	overflow: hidden;
+	display:flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+/*不會改的地方啦qq*/
+#cam_content .img_ul {
+	position: relative;
+	display:flex;
+	width:100%;
+	height:max-content;
+	object-fit: cover;
+	transition: margin-left 0.3s ease;
+}
+#cam_content .img_ul img{
+	position: relative;
+	width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持原始比例並填滿容器 */
+}
+/*左右按鍵的設定*/
+.buttons { 
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.left {
+	color: rgb(255, 255, 255);
+	position: absolute;
+	margin:5px;
+	left: 0;
+	font-size:30px;
+	cursor: pointer;
+}
+
+.right {
+	color: rgb(255, 255, 255);
+	position: absolute;
+	margin:5px;
+	right: 0;
+	font-size:30px;
+	cursor: pointer;
+}
+
+.litCir_ul {
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+}
+
+.dot {
+	background: white;
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+	margin: 5px;
+}
+
+.active-dot {
+	background: #ed431b;
+}
+
+#cam_content h5{
+	text-align: center;
+	color:#ed431b;
+	font-weight:700;
+	letter-spacing: 5px;
+	margin:35px;
+}
+#cam_content a{
+    font-size:10px;
+    color:#ed431b;
+    border: solid 1px #ed431b;
+    border-radius:30px;
+	margin:20px;
+    padding:5px 15px 5px 15px;
+    text-align: center;
+	font-weight:700;
+	text-decoration: none;
+}
+#cam_content a:hover{
+    background-color:#ed431b;
+    color:#efe1c1;
+}
+
+/*bag 彈出視窗*/
+
+#bag_content{
+	position:absolute;
+	top:40%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	height:40%;
+	width:70%;
+	background-color: #f3f1ebd1;
+	z-index:50;
+	display:none;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	box-shadow:0px 0px 20px rgba(0, 0, 0, 0.5);
+	transition: height 0.3s ease;
+}
+#bag_content h3{
+	text-align: center;
+	color:#ed431b;
+	font-weight:700;
+	letter-spacing: 10px;
+	margin:5px;
+}
+#bag_content .otherpic{
+	position: relative;
+	width:85%;
+	height:50%;
+	background:url(../images/mer_inbag-10.png) bottom no-repeat;/*在容器裡放圖片*/
+	background-size:cover;
+	margin:12px auto;
+}
+#bag_content .otherpic img{
+	position: relative;
+	height:100%;
+	width:auto;
+	/*overflow: hidden;*/
+	object-fit:cover;
+}
+#bag_content h5{
+	text-align: center;
+	color:#ed431b;
+	font-weight:700;
+	letter-spacing: 5px;
+	margin:5px;
+}
+
+#bag_content a{
+    font-size:10px;
+    color:#ed431b;
+    border: solid 1px #ed431b;
+    border-radius:20px;
+	margin:15px;
+    padding:5px 15px 5px 15px;
+    text-align: center;
+	font-weight:700;
+	text-decoration: none;
+}
+#bag_content a:hover{
+    background-color:#ed431b;
+    color:#efe1c1;
+}
+
+#toy_content{
+	position:absolute;
+	top:60%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	height:40%;
+	width:70%;
+	background-color: #f3f1ebd1;
+	z-index:50;
+	display:none;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	box-shadow:0px 0px 20px rgba(0, 0, 0, 0.5);
+	transition: height 0.3s ease;
+}
+#toy_content h3{
+	text-align: center;
+	color:#ed431b;
+	font-weight:700;
+	letter-spacing: 10px;
+	margin:5px;
+}
+#toy_content .otherpic{
+	position: relative;
+	width:85%;
+	height:50%;
+	background:url(../images/mer-03.png) bottom no-repeat;/*在容器裡放圖片*/
+	background-size:cover;
+	margin:12px auto;
+}
+#toy_content .otherpic img{
+	position: relative;
+	height:100%;
+	width:auto;
+	/*overflow: hidden;*/
+	object-fit:cover;
+}
+#toy_content h5{
+	text-align: center;
+	color:#ed431b;
+	font-weight:700;
+	letter-spacing: 5px;
+	margin:5px;
+}
+
+#toy_content a{
+    font-size:10px;
+    color:#757575;
+    border: solid 1px #757575;
+    border-radius:20px;
+    padding:5px 15px 5px 15px;
+    text-align: center;
+	font-weight:700;
+	text-decoration: none;
+	display:block;
+	margin: 20px auto;
+	width:80%;
+}
+#toy_content a:hover{
+    color:#c1c1c1;
+	border: solid 1px #c1c1c1;
+}
+
+
+#sticker_content{
+	position:absolute;
+	top:80%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	height:40%;
+	width:70%;
+	background-color: #f3f1ebd1;
+	z-index:50;
+	display:none;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	box-shadow:0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+#sticker_content h3{
+	text-align: center;
+	color:#ed431b;
+	font-weight:700;
+	letter-spacing: 10px;
+	margin:5px;
+}
+#sticker_content .otherpic{
+	position: relative;
+	width:70%;
+	height:60%;
+	/*background:url(../images/mer_inbag-10.png) bottom no-repeat;/*在容器裡放圖片*/
+	/*background-size:cover;*/
+	margin:12px auto;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+
+}
+#sticker_content .otherpic img{
+	position: relative;
+	margin:5px;
+	width:100%;
+	height:min-content;
+	overflow: hidden;
+	object-fit:cover;
+}
+#sticker_content h5{
+	text-align: center;
+	color:#ed431b;
+	font-weight:700;
+	letter-spacing: 5px;
+	margin:5px;
+}
+
+#sticker_content a{
+    font-size:10px;
+    color:#ed431b;
+    border: solid 1px #ed431b;
+    border-radius:20px;
+    padding:5px 15px 5px 15px;
+    text-align: center;
+	font-weight:700;
+	text-decoration: none;
+	display:block;
+	margin: 20px auto;
+	width:80%;
+}
+#sticker_content a:hover{
+    background-color:#ed431b;
+    color:#efe1c1;
+}
+
+/*aside*/
+aside{
+	position:relative;/*置頂在固定位置，後續再用top bottom right left制定，不隨著滾輪滑動*/
+    width:70%;/*全區寬*/
+	margin:0 auto;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	animation: fadeInFromBottom 1s ease 0s 1;
+}
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 達到頂部，元素停止移動 */
+    }
+}
+.mori{
+	margin:10pt;
+	width:75%;
+	height:min-content;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+.mori img{
+	width:100%;
+	height:100%;
+	object-fit: cover;
+	display: block;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.75); /* 半透明白色背景 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* 隱藏 */
+    transition: opacity 0.3s ease; /* 給予漸變效果 */
+}
+
+.overlay a {
+    font-size: 12px;
+    color: #ed431b;
+    font-weight: 400;
+	letter-spacing: 2px;
+	text-decoration: none;
+	text-align: center;
+}
+
+.mori:hover .overlay {
+    opacity: 1; /* 游標移至此時才會產生透明度的變化 */
+}
+aside h4{
+	color:#ed431b;
+	text-align: center;
+	font-weight:600;
+	letter-spacing: 5px;
+	margin:5px;
+}
+aside p{	
+	margin:0px 0px 15px 0px;
+	width:100%;
+	font-size:8pt;
+	letter-spacing: 1px;
+	color:#ed431b;
+	text-align: center;
+}
+
+/*footer*/
+footer{
+	display:flex;
+	width:100%;
+	height:20vh;
+	justify-content: center;/*讓圖片水平置中*/
+	align-items: center;/*讓圖片垂直置中*/
+    /*align-items:center;/*讓圖片置中*/
+	background:url(../images/mer-03.png) bottom no-repeat;/*在容器裡放圖片*/
+	background-size:cover;/*剛好擺滿照片*/
+	position: relative;
+	z-index:100000;
+}
+.buy a {
+	text-decoration:none;
+	text-align: center;
+	font-weight: 700;
+	color:#efe1c1;
+	z-index:100000;
+	letter-spacing: 3px;
+}
+
+
+/*for desktops*/
+@media only screen and (min-width: 768px) {
+
+
+/*nav*/
+nav{
+    padding:20px 0px 20px 0px; /* 上右下左的padding space */	
+}
+
+/*section*/
+
+.ban{
+	width:50%;
+}
+
+/*main*/
+main{
+	display:flex;
+	position:relative;
+	width:65%;
+	margin:70px auto 30px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content:space-around;
+	align-items:center;
+}
+.mer{
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
+	width:40%;
+	height:auto;
+	/*border-bottom:3px dotted #ed431b;*/
+	margin:0px 10px 10px 0px;
+	text-align: center;
+	overflow:hidden;
+}
+.pic {
+	width:100%;
+	height:auto;
+	/*float:left;*/
+  }
+.mer p{
+	display: flex;
+	flex-direction: row;	
+	justify-content:space-between;
+	align-items: flex-end;
+	width:100%;
+	text-align: left;
+	font-size:8pt;
+	color:#ed431b;
+	margin:0px 0px 15px 10px;
+}
+#cam_content{
+	position:absolute;
+	top:30%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	height:40%;
+	width:100%;
+	justify-content: center;
+}
+#cam_content a{
+	margin:10px auto;
+	width:50%;
+}
+#bag_content{
+	position:absolute;
+	top:30%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	height:40%;
+	width:100%;
+}
+#bag_content .otherpic{
+	position: relative;
+	width:85%;
+	height:85%;
+	background:url(../images/mer_inbag-10.png) bottom no-repeat;/*在容器裡放圖片*/
+	background-size:cover;
+	margin:10px auto;
+}
+#bag_content a{
+	margin:10px auto;
+	width:50%;
+}
+#toy_content{
+	position:absolute;
+	top:80%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	height:40%;
+	width:100%;
+}
+#toy_content a{
+	margin:10px auto;
+	width:50%;
+}
+#sticker_content{
+	position:absolute;
+	top:80%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	height:30%;
+	width:100%;
+	display: flex;
+}
+#sticker_content .otherpic{
+	position: relative;
+	width:80%;
+	height:30%;
+	margin:20px auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+
+}
+#sticker_content .otherpic img{
+	position: relative;
+	margin:5px;
+	width:55%;
+	height:min-content;
+}
+#sticker_content h5{
+	margin:15px auto;
+}
+#sticker_content a{
+	margin:10px auto;
+	width:50%;
+}
+aside{
+	position:relative;/*置頂在固定位置，後續再用top bottom right left制定，不隨著滾輪滑動*/
+    width:70%;/*全區寬*/
+	margin:0 auto;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+.mori{	
+	width:70%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.75); /* 半透明白色背景 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* 隱藏 */
+    transition: opacity 0.3s ease; /* 給予漸變效果 */
+}
+
+.overlay a {
+    font-size: 18px;
+}
+aside h4{
+	font-size: 20px;
+}
+
+}
