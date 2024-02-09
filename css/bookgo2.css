@@ -1,0 +1,184 @@
+@charset "utf-8";
+/* CSS Document */
+/* 置中 "*"表全區 */
+*{
+   
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body{
+    margin:0;
+    padding:0;
+    background:#E7E7E7;
+    scroll-behavior: smooth;
+}
+header{
+    position: relative;
+    top:0px;
+    width:100%;
+    height:10%;
+    background:#E7E7E7;
+    animation: rightIn 1s ease 0s 1;
+}
+@keyframes rightIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* 達到頂部，元素停止移動 */
+    }
+}
+.nameplace{
+    text-decoration: none; /*將底線去除*/
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin:0px 5px;
+    
+}
+.nameplace a{
+    text-decoration: none;
+    color: inherit;
+}
+.nameplace li{
+    list-style: none;
+}
+.nameplace h5{
+    color:#595757;
+    text-align: left;
+    font-weight: 300;
+    font-size: 10px;
+}
+.nameplace h5:hover{
+    font-weight: 800;
+    font-size: 13px;
+    transition: all 0.8s ease;
+}
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 達到頂部，元素停止移動 */
+    }
+}
+/* nav */
+nav{
+    width:100%;
+    height:50vh;
+    display:flex;
+    justify-content: left;
+    align-items:center;
+    background:url(../images/staycover.jpg) bottom no-repeat;/*在容器裡放圖片*/
+    background-size: cover; /* 讓背景圖片自動調整大小以填滿元素 */
+    background-position: center; /* 將背景圖片置中 */
+    /* 可以添加其他樣式，如顏色、邊框等 */
+    }
+.tap{
+    margin:10px;
+    width:100%;
+    display:flex;
+    justify-content: left;
+    align-items:center;
+    animation: rightIn 1s ease 0s 1;
+}
+@keyframes rightIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* 達到頂部，元素停止移動 */
+    }
+}
+.tap a{
+    color: #595757;
+    text-decoration: none;
+    text-align: left;
+    margin-top: 0px;
+    font-weight: 300;
+    font-size: 15px;
+}
+aside{
+ 
+    width:60%;
+    height:auto;
+    margin:0 auto;
+}
+.imghere{
+    margin-top: 30px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+aside img{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 水平偏移量 垂直偏移量 模糊程度 陰影顏色 */
+}
+aside h4{
+    color: #595757;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 300;
+    font-size: 13px;
+    word-spacing: 2pt;
+}
+
+footer h4{
+    color: #595757;
+    text-align: center;
+    font-weight:300;
+    font-size: 10px;
+}
+footer a{
+    text-decoration: none;
+}
+footer a :hover{
+    font-weight:800;
+    font-size: 15px;
+    transition: all 0.8s ease;
+}
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 達到頂部，元素停止移動 */
+    }
+}
+/* For tablets */
+@media only screen and (min-width: 768px){
+    .nameplace h5{
+        font-size: 15px;
+    }
+    .nameplace h5:hover{
+       font-size: 20px;
+    }
+
+    nav{
+      
+        height:80vh;
+    }
+    .tap{
+        margin:20px;
+        justify-content: left;
+        align-items:center;
+       
+    }
+    .tap a{
+        text-align: left;
+        font-size: 22px;
+    }
+
+    footer h4{
+        font-size: 13px;
+    }
+}
