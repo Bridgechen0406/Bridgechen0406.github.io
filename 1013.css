@@ -1,0 +1,515 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+    font-family: 'Young Serif', serif;
+    padding:0;
+    margin:0;
+    text-decoration:none;
+    color:#D47035;
+}/*全區置中*/
+
+html {
+    scroll-behavior: smooth;/*滑動效果！！*/
+  }
+
+body{
+    /*background:rgba(254,227,224,1)*/
+    background-size:cover;/*滿版*/
+    background-position:bottom;/*底部往上長*/
+
+}
+/*偽元素*/
+::-moz-selection{/*firefox*/
+    color:#F3EBE2;
+    background:#9CC4BC;
+}
+::selection{
+    color:#F3EBE2;
+    background:#9CCABC;
+}
+
+/* nav bar */
+nav{
+    position:fixed;/*置頂在固定位置，後續再用top bottom right left制定，不隨著滾輪滑動*/
+    width:100%;/*全區寬*/
+    top:0px;
+    z-index:100000;  /* 疊層的順序（圖層的感覺）數字越大越上層 */
+    padding:10pX; /* 上右下左的padding space */
+    margin:auto;
+    text-align:center;
+    box-sizing:border-box;
+    background:#F3EBE2;
+    border-bottom:solid 1px #D47035;
+    animation: fadeInFromTop 1s ease 0s 1;
+}
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 達到頂部，元素停止移動 */
+    }
+}
+/* 標籤a是inline屬性 沒辦法設定寬高 只能另外設定,argin padding */
+nav a{
+    font-size:10px;
+    color:#D47035;
+    border: solid 1px #D47035;
+    border-radius:20px;
+    padding:3px 12px 3px 12px;
+    margin:10px;
+}
+nav a:hover{
+    color:#9CC4BC;
+    border:dotted 2px #9CC4BC;
+}
+nav.logo h4{
+    position:absolute;
+    color:#D47035;
+    text-align:center;
+    margin:20px;
+}
+.date h5{
+    position:absolute;
+    right:20px;
+    bottom:20px;
+    color:#d46f3500;/**/
+}
+
+/* section */
+section{
+    position:relative;
+    width:90%;
+    height:40%;
+    overflow:hidden;/*把多餘容器的圖片裁切掉*/
+    margin:10px auto;/*100px是往下移*/
+    background-color:rgba(255, 244, 244, 0.75);
+    border-bottom:solid 1px #D47035;
+    animation: fadeInFromTop 1s ease 0s 1;
+}
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 達到頂部，元素停止移動 */
+    }
+}
+
+.right{
+    display: flex;/*讓圖片置中*/
+    justify-content: center;/*讓圖片置中*/
+    align-items:center;/*讓圖片置中*/
+}
+.right img{
+    position: relative;
+    top:20px;
+}
+
+.left{
+    position:absolute;
+    box-sizing:border-box;
+    width:50%;
+    left:5%;
+    top:23%;
+    padding:30px 20px;
+    z-index:20;
+}
+.left h1{
+    letter-spacing: 3px;
+    font-size:20px;
+    line-height:1em;
+    padding-bottom:5px;
+    color:#D47035;
+}
+.left p{
+    width:80%;/*50趴大小的left容器中的80趴*/
+    color:#D47035;
+    font-size:8px;
+    letter-spacing: 1px;
+}
+
+
+/*article*/
+
+article{
+        display:flex;
+        width:90%;
+        margin:auto;/*置中*/
+        padding:0;
+        margin:12px auto;
+        flex-wrap:wrap;
+        justify-content:center;
+        align-items:center;
+        animation: fadeInFromBottom 1s ease 0s 1;
+}
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 達到頂部，元素停止移動 */
+    }
+}
+
+.card{
+    position: relative;
+    box-sizing:border-box;
+    margin:auto;
+    width:90%;
+    transition: background 0.5s,color 9.5s; /* 給予動態，要寫在主體card裡 hover只針對變化後描述就好 */
+    -webkit-transition: background 0.5s, color 0.5s;
+    margin-top: 10px; /* 上邊距增加 */
+    margin-bottom: 10px; /* 下邊距增加 */
+}
+.card h4{
+    text-align:center;
+    font-size:15px;
+    letter-spacing: 3px;
+    margin:5px;
+}
+.card img {
+    width: 100%; /* 設置圖片寬度為100% */
+    height: auto; /* 讓高度自動調整，保持圖片比例 */
+    display: block;
+}
+.card .overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+
+    opacity: 0; /* 隱藏 */
+    transition: opacity 0.3s ease; /* 給予漸變效果 */
+    z-index:10;
+    background: rgba(255, 244, 244, 0.75); /* 設置不透明的背景色 */
+    box-shadow: 0 0 20px rgba(84, 73, 73, 0.5);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+.card .overlay p{
+    letter-spacing: 1px;
+}
+.card .overlay h5{
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+.card:hover .overlay {
+    opacity: 1; 
+}
+.card:hover h4 {
+    opacity: 0; 
+}
+
+/*article 2*/
+article2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clear:both;/*忘記意思了*/
+    width:100%;
+    height:50vh;
+    margin:10px auto;
+    padding:0;
+    animation: fadeInFromBottom 1s ease 0s 1;
+}
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 達到頂部，元素停止移動 */
+    }
+}
+.how{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:90%;
+    height:90%;
+    box-sizing:border-box;
+    background:rgba(255, 244, 244, 0.7);
+    flex-direction: row;
+}
+.title{
+    position: relative;
+    padding:6%;
+    width:30%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.title h3{
+    font-size: 35px;
+}
+.what{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:20px;
+}
+div.panel, p.flip {
+    margin: 3px;
+    padding: 10px;
+    text-align: center;
+    background:#d46f35a4;
+    color:#F3EBE2;
+    font-size: 13px;
+    cursor: pointer;
+}
+.flip:hover{
+    background:#9CC4BC;
+}
+
+div.panel {
+    height:10%;
+    display: none;
+    background:#F3EBE2;
+}
+
+
+div.panel2, p.flip2 {
+    margin: 3px;
+    padding: 10px;
+    text-align: center;
+    background:#d46f35a4;
+    color:#F3EBE2;
+    font-size: 13px;
+    cursor: pointer;
+}
+.flip2:hover{
+    background:#9CC4BC;
+}
+
+div.panel2 {
+    height:10%;
+    display: none;
+    background:#F3EBE2;
+}
+
+
+div.panel3, p.flip3 {
+    margin: 3px;
+    padding: 10px;
+    text-align: center;
+    background:#d46f35a4;
+    color:#F3EBE2;
+    font-size: 13px;
+    cursor: pointer;
+}
+.flip3:hover{
+    background:#9CC4BC;
+}
+
+div.panel3 {
+    height:10%;
+    display: none;
+    background:#F3EBE2;
+}
+    
+/*aside*/
+aside{
+    clear:both;/*忘記意思了*/
+    width:90%;
+    margin:auto;
+    animation: fadeInFromBottom 1s ease 0s 1;
+}
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 達到頂部，元素停止移動 */
+    }
+}
+.wrap{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    height:65%;
+    box-sizing:border-box;
+    margin-top:10px;
+    padding:10px;
+    background:rgba(255, 244, 244, 0.7);
+}
+.contactme{
+    text-align:center;
+    font-size:15px;
+    letter-spacing: 2px;
+    margin:0;
+}
+.manyme{
+    position: relative;
+    width:80%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:row;
+    flex-wrap: nowrap;
+}
+.me_p{
+    position: relative;
+    width:30%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    margin:10px;
+    -ms-transform: scale(1,1); /* IE 9 */
+    -webkit-transform: scale(1,1); /* Safari */
+    transform: scale(1,1); /* Standard syntax */
+	
+	transition: transform 0.3s;
+	-webkit-transition: transform 0.3s;
+	
+	transition-timing-function: ease-in-out;
+	-webkit-transition-timing-function: ease-in-out;/* Safari */
+}
+.me_p p{
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #d46f3500;
+}
+.me_p:hover{
+	-ms-transform:scale(1.2,1.2);
+	-webkit-transform:scale(1.2,1.2);
+	transform:scale(1.2,1.2);
+}
+.me_p:hover p{
+	-ms-transform:scale(1.1,1.1);
+	-webkit-transform:scale(1.1,1.1);
+	transform:scale(1.1,1.1);
+    color: #d46f35;
+}
+/*footer*/
+footer{
+    clear:both;
+    padding:20px 0px;
+    text-align:center;
+    margin-top:10px;
+}
+
+
+
+
+/* For tablets */
+@media only screen and (min-width: 768px){
+
+/* nav bar */
+nav{
+    padding:23pX; /* 上右下左的padding space */}
+/* 標籤a是inline屬性 沒辦法設定寬高 只能另外設定,argin padding */
+nav a{
+    font-size:13px;
+    padding:5px 13px 5px 13px;
+    margin:23px 20px 23px 20px;
+}
+
+.logo h4{
+    position:absolute;
+    left:20px;
+    color:#D47035;
+}
+.date h5{
+    position:absolute;
+    right:20px;
+    bottom:20px;
+    color:#D47035;
+}
+
+/* section */
+section{
+    width:80%;
+    height:500px;
+}
+
+.right{
+    height:500px;/*置中範圍*/
+}
+
+.left h1{
+    font-size:50px;
+    padding-bottom:20px;
+}
+.left p{
+    font-size:15px;
+    width:60%;/*50趴大小的left容器中的80趴*/
+    height:70%;
+}
+
+article{
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:80%;
+    background:rgba(255, 244, 244, 0.5); 
+}
+article .card{
+    width:100%;
+}
+.card .overlay p{
+    letter-spacing: 1px;
+    font-size: 10px;
+}
+article a{
+    width:30%;
+    text-align:center;
+    padding:0px;
+    margin:6px;
+}
+article2{
+    width:100%;
+    height:33vh;
+}
+.how{
+    width:80%;
+}
+
+.what{
+    flex-direction: row;
+    margin:5px;
+}
+.title{
+    padding:3%;
+    width:33%;
+}
+div.panel {
+    height:40%;
+}
+div.panel2 {
+    height:48%;
+}
+div.panel3 {
+    height:28%;
+}
+
+/*aside*/
+aside{
+    clear:both;/*忘記意思了*/
+    width:80%;
+    margin:auto;
+}
+.wrap{
+    height:80%;
+    padding:20px;
+}
+}
