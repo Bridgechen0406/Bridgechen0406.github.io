@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* CSS Document */
+/* 置中 "*"表全區 */
+*{
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body{
+    margin:0;
+    padding:0;
+    background:#ffffff;
+    scroll-behavior: smooth;
+}
+header{
+    position: relative;
+    top:0px;
+    width:100%;
+    height:10%;
+    background:#ffffff;
+    animation: rightIn 1s ease 0s 1;
+}
+@keyframes rightIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* 達到頂部，元素停止移動 */
+    }
+}
+.nameplace{
+    text-decoration: none; /*將底線去除*/
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin:0px 5px;
+    
+}
+.nameplace a{
+    text-decoration: none;
+    color: inherit;
+}
+.nameplace li{
+    list-style: none;
+}
+.nameplace h5{
+    color:#595757;
+    text-align: left;
+    font-weight: 300;
+    font-size: 10px;
+}
+.nameplace h5:hover{
+    font-weight: 800;
+    font-size: 13px;
+    transition: all 0.8s ease;
+}
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 達到頂部，元素停止移動 */
+    }
+}
+/* nav */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto; /* 讓元素置中 */
+    border-bottom: 1px solid #59575794; /* 添加底線 */
+    animation: fadeInUp 1.5s forwards; /* 啟動動畫 */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.title {
+    width:85%;
+    text-align: center;
+    margin-top: 10px; /* 調整圖片與文字之間的間距 */
+}
+
+.title h1 {
+    font-size: 16px; 
+    font-weight: 300;/* 調整標題的字型大小 */
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+}
+
+.title h5 {
+    margin-top: 5px;
+    font-weight: 300; /* 調整段落的字型大小 */
+}
+.title a{
+    color: black;
+}
+.title a:hover h5 {
+    font-weight: 800; /* 將超連結文字在hover時的字體粗細設置為800 */
+    font-size: 120%;
+    transition: all 0.8s ease;
+}
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50%); /* 從下方開始，將元素移至底部 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 達到頂部，元素停止移動 */
+    }
+}
+
+/*article*/
+article{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto; /* 讓元素置中 */
+    border-bottom: 1px solid #59575794; /* 添加底線 */
+    animation: fadeInUp 1.5s forwards; /* 啟動動畫 */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.gif_ch{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.gif_ch img{
+    width:45%;
+    margin:5px;
+}
+.text{
+    width:85%;
+}
+.text h3{
+    text-align: left;
+    font-weight: 300;
+}
+.text h4{
+    text-align: left;
+    font-size: 14px;
+    font-weight: 300;
+}
+aside{ animation: fadeInUp 1.5s forwards; /* 啟動動畫 */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* For tablets */
+@media only screen and (min-width: 768px){
+    .nameplace h5{
+        font-size: 15px;
+    }
+    .nameplace h5:hover{
+       font-size: 20px;
+    }
+
+    footer h4{
+        font-size: 13px;
+    }
+.title h1 {
+    font-size: 33px; 
+    letter-spacing: 3px;
+}
+.title h4 {
+    font-size: 19px;
+    
+}
+.gif_ch img{
+    width:23%;
+    margin:5px;
+}
+}
