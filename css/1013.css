@@ -325,81 +325,47 @@ div.panel3 {
 /*aside*/
 aside{
     clear:both;/*忘記意思了*/
-    width:90%;
+    width:100%;
     margin:auto;
     animation: fadeInFromBottom 1s ease 0s 1;
 }
-@keyframes fadeInFromBottom {
-    from {
-        opacity: 0;
-        transform: translateY(50%); /* 從下方開始，將元素移至底部 */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0); /* 達到頂部，元素停止移動 */
-    }
-}
-.wrap{
+.aboutme{
     display:flex;
     justify-content:center;
     align-items:center;
-    flex-direction:column;
+    flex-direction: row;
     flex-wrap: nowrap;
-    height:65%;
     box-sizing:border-box;
-    margin-top:10px;
-    padding:10px;
     background:rgba(255, 244, 244, 0.7);
+    flex-direction: row;
 }
-.contactme{
-    text-align:center;
-    font-size:15px;
-    letter-spacing: 2px;
-    margin:0;
-}
-.manyme{
+.aboutme .mehere{
     position: relative;
-    width:80%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:row;
-    flex-wrap: nowrap;
+    cursor: pointer;
 }
-.me_p{
-    position: relative;
-    width:30%;
+.aboutme .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     display: flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* 隱藏 */
+    transition: opacity 0.3s ease; /* 給予漸變效果 */
+    z-index:2;
+   
+}
+.mehere:hover .overlay {
+    opacity: 1; 
+}
+.aboutme .aboutme_t{
+    display:flex;
+    flex-direction: column;
     flex-wrap: nowrap;
-    margin:10px;
-    -ms-transform: scale(1,1); /* IE 9 */
-    -webkit-transform: scale(1,1); /* Safari */
-    transform: scale(1,1); /* Standard syntax */
-	
-	transition: transform 0.3s;
-	-webkit-transition: transform 0.3s;
-	
-	transition-timing-function: ease-in-out;
-	-webkit-transition-timing-function: ease-in-out;/* Safari */
-}
-.me_p p{
-    font-size: 8px;
-    letter-spacing: 2px;
-    color: #d46f3500;
-}
-.me_p:hover{
-	-ms-transform:scale(1.2,1.2);
-	-webkit-transform:scale(1.2,1.2);
-	transform:scale(1.2,1.2);
-}
-.me_p:hover p{
-	-ms-transform:scale(1.1,1.1);
-	-webkit-transform:scale(1.1,1.1);
-	transform:scale(1.1,1.1);
-    color: #d46f35;
+    justify-content: left;
+    margin:20px;
+    letter-spacing: 1px;
 }
 /*footer*/
 footer{
@@ -407,6 +373,23 @@ footer{
     padding:20px 0px;
     text-align:center;
     margin-top:10px;
+    margin-bottom: 20px;
+}
+footer h4{
+    margin:10px;
+}
+footer a{
+    font-size:15px;
+    color:#D47035;
+    border: solid 1px #D47035;
+    border-radius:20px;
+    padding:3px 12px 3px 12px;
+    margin:10px;
+    
+}
+footer a:hover{
+    color:#9CC4BC;
+    border:dotted 2px #9CC4BC;
 }
 
 
@@ -508,8 +491,5 @@ aside{
     width:80%;
     margin:auto;
 }
-.wrap{
-    height:80%;
-    padding:20px;
-}
+
 }
