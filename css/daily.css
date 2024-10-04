@@ -138,7 +138,7 @@ article{
    text-align: center;
 }
 .previous{
-    display:flex;
+    display:flex;/*display進行大容器內怎麼排所以要寫在第一外層*/
     flex-wrap: wrap;
     width:90%;
     justify-content: space-around;
@@ -297,16 +297,16 @@ article{
 .previous{
     display:flex;
     flex-wrap: wrap;
-    width:90%;
+    width:95%;
     justify-content: space-around;
 
 }
 .previous .card {  
     box-sizing:border-box;
-    width:30%;
+    width:22%;
     text-align:center;
     padding:0px;
-    margin:5px;
+    margin:1px;
 }
 .previous .card h4{
     font-weight: 200;

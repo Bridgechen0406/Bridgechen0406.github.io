@@ -271,6 +271,50 @@ section{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* 添加陰影效果 */
 }
 
+#nycu2{
+    width:100%;
+    background-color: #DBDCDC;
+    display:flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content:left;
+    align-items: center;
+}
+.texthere{
+    margin:1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* 使容器高度填滿 #afternoon */
+    
+}
+#nycu2 h4{
+    color:#717071;
+    font-weight: 100;
+    letter-spacing: 1pt;
+    font-size:50%;
+}
+#nycu2 h2 {
+    color:#717071;
+    font-weight:800;
+    font-size:200%;
+    line-height: 0.8;
+}
+#nycu2 .imghere {
+    display: flex;
+    /*justify-content:right;*/
+    width:50%;
+    height:auto;
+    margin-right: auto; /* 将图像向右移动 */
+    margin:10px; /* 添加间距 */
+}
+
+#nycu2 .imghere img {
+    width: 80%; /* 讓圖像填滿父元素 */
+    height: auto; /* 讓高度根據寬度等比例縮放 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* 添加陰影效果 */
+}
+
 article{
     display: flex;
     width:100%;
